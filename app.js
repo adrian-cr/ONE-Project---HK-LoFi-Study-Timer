@@ -22,12 +22,37 @@ const sounds = {
   "timeUp": document.getElementById("time-up-sound"),
   "wind": document.getElementById("wind-sound"),
 };
-const vidFileNames = {
-  "dirtmouth": "dirtmouth",
-  "greenpath": "greenpath",
-  "city of tears": "city_of_tears",
-  "resting grounds": "resting_grounds",
-  "hollow knight (main theme)": "main_theme"
+const vidInfo = {
+  dirtmouth: {
+    name: "Dirtmouth",
+    fileName: "dirtmouth",
+    fileId: "9jjqgk4tdxdplx0a7x846",
+    fileKey: "t813fq5ldcyznbbneoylxl45y"
+  },
+  greenpath: {
+    name: "Greenpath",
+    fileName: "greenpath",
+    fileId: "a8ndpymjhe1rv9jog4luh",
+    fileKey: "gnrau60f60n30gkyuxq73ycnw"
+  },
+  cityOfTears: {
+    name: "City of Tears",
+    fileName: "city_of_tears",
+    fileId: "vactdvl5dkovtjstohu6f",
+    fileKey: "v5oh2tl1de1acbn33njrpbj67"
+  },
+  restingGrounds: {
+    name: "Resting Grounds",
+    fileName: "resting_grounds",
+    fileId: "8yrjf9z15ukuw8us979pi",
+    fileKey: "q8h2wg1s1y7eh102515t7ttia"
+  },
+  mainTheme: {
+    name: "Hollow Knight (Main Theme)",
+    fileName: "main_theme",
+    fileId: "azcig9omjmnxxrdph6gvd",
+    fileKey: "7ta5lr7cxomznp922gh9jmzav"
+  }
 };
 
 let shortBreaks = 0;
@@ -187,11 +212,12 @@ function timeUp() {
 }
 
 function playNextVideo() {
-  vidSource.setAttribute("src", `videos/${Object.values(vidFileNames)[nextTrack]}.mp4`)
+  let trackDict = vidInfo[Object.keys(vidInfo)[nextTrack]];
+  vidSource.setAttribute("src", `https://dl.dropboxusercontent.com/scl/fi/${trackDict["fileId"]}/${trackDict["fileName"]}.mp4?rlkey=${trackDict["fileKey"]}`)
   vid.load();
   vid.play();
-  songNameBanner.innerText = `Song: ${Object.keys(vidFileNames)[nextTrack]}`;
-  (nextTrack<Object.values(vidFileNames).length - 1) ? nextTrack++ : nextTrack = 0;
+  songNameBanner.innerText = `Song: ${trackDict["name"]}`;
+  (nextTrack<Object.values(vidInfo).length - 1) ? nextTrack++ : nextTrack = 0;
 }
 
 function startStopTimer() {
@@ -210,8 +236,6 @@ function startStopTimer() {
       formatTimer();
     }
   }, 1000);
-
-  //timer.innerText = time;
 }
 
 function nextStage() {
