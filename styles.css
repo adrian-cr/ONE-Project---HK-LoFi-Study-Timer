@@ -3,4 +3,196 @@
   src:  url('fonts/trajan_pro_regular-webfont.woff2') format('woff2');
   }
 
+* {
+  color: white;
+  font-family: "Trajan Pro";
+}
 
+body {
+  background-color: black;
+
+}
+
+button {
+  color: white;
+  border: none;
+  font-size: 2.5em;
+  background-color: transparent;
+  width: 100%;
+}
+
+button:hover {
+ transition: 400ms;
+ text-shadow: 0 0 20px #fff;
+ cursor:pointer;
+
+}
+
+div {
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width:100vw;
+  height:100vh;
+  background-color:black;
+  position:fixed;
+  top:0;
+  left:0;
+  }
+
+div p {
+  text-justify: center;
+}
+
+h1 {
+  color: white;
+  font-size: 3.5em;
+  margin: 30px 0;
+  text-align: center;
+  width:100%;
+}
+
+p {
+  font-size: 1.5em;
+  text-align: center;
+  width:100%;
+}
+
+section {
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 90vh;
+  justify-content: center;
+}
+
+section.hidden, section.hidden * {
+  display:none;
+}
+
+#timer {
+  color: white;
+  font-size: 8em;
+  line-height: 80%;
+  width: 100%;
+}
+
+#start-button {
+  display: block;
+}
+
+.option-button {
+  font-size: 2em;
+}
+
+.option-overlay {
+  display: none;
+}
+
+.option-overlay p {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.option-title {
+  font-size: 3em;
+  width:100%;
+}
+
+.option-back {
+  margin-top: 50px;
+}
+
+video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -10000;
+}
+
+#song-name-banner {
+  margin-bottom: 20px;
+}
+
+#rest-image {
+  width:20%;
+}
+
+[status = "empty"] section, [status = "empty"] section * {
+    animation: fadeOut 1 1000ms forwards;
+  }
+
+[status = "empty"] body {
+  background-color: black;
+  transition: 1000ms;
+}
+
+[status = "main"] body {
+  background-color: #000020;
+  transition: 2000ms;
+}
+
+[status = "main"] .main-screen * {
+  animation: fadeIn 1 2000ms;
+  }
+
+
+[status = "active"] .active-screen {
+  display: flex;
+}
+
+[status = "active"] .active-screen * {
+  animation: fadeIn 1 2000ms;
+}
+
+.glow {
+  animation: glowUp 1s 1s forwards !important;
+}
+
+@keyframes fadeOut {
+  from {
+    color: white;
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    color: transparent;
+    display: none;
+    opacity: 0;
+    text-shadow: 0 0 20px transparent;
+    visibility: hidden;
+
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    color: transparent;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    color: white;
+    display: unset;
+    opacity:1;
+    text-shadow: 0 0 20px transparent;
+    visibility: visible;
+  }
+}
+
+@keyframes glowUp {
+  from {
+    text-shadow: none;
+  }
+  to {
+    text-shadow: 0 0 30px #9eeaff;
+  }
+}

@@ -1,11 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" status="" glow="">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Hollow Knight Lo-Fi Study Timer</title>
+  <script src="app.js" defer></script>
+  <audio src="sounds/blizzard_loop.wav" id="wind-sound"></audio>
+  <audio src="sounds/break.wav" id="rest-sound"></audio>
+  <audio src="sounds/stop.wav" id="stop-sound"></audio>
+  <audio src="sounds/select.wav" id="select-sound"></audio>
+  <audio src="sounds/time_up.wav" id="time-up-sound"></audio>
 </head>
 <body>
+
+  <section class="main-screen">
+    <video id="main-video-background" loop>
+      <source id="main-video-source" src="videos/main_theme.mp4" type="video/mp4">
+    </video>
+    <img src="images/logo.webp"/>
+    <div id="start-overlay"><p>Click Anywhere</p></div>
+    <div class="option-overlay" id="hiw-overlay">
+      <p>
+        <span class="option-title">How It Works</span>
+      Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit.
+      Consequatur, repudiandae possimus.
+      Tenetur, quibusdam? Ipsam pariatur ut nemo reprehenderit?
+      Sed eligendi, debitis repudiandae voluptas
+      et quidem velit magnam quod impedit officiis.
+      </p>
+      <br>
+      <button class="option-back" onclick="backToMain();">Back</button>
+    </div>
+    <div class="option-overlay" id="credits-overlay">
+      <p>
+        <span class="option-title">Credits</span>
+      Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit.
+      Consequatur, repudiandae possimus.
+      Tenetur, quibusdam? Ipsam pariatur ut nemo reprehenderit?
+      Sed eligendi, debitis repudiandae voluptas
+      et quidem velit magnam quod impedit officiis.
+      </p>
+      <br>
+      <button id="option-back" onclick="backToMain();">Back</button>
+    </div>
+    <h1>The Unofficial Lo-Fi Focus Timer</h1>
+    <button id="start-button" onmousedown="start();">Start</button>
+    <button class="option-button" onmousedown="showOption('hiw');">How It Works</button>
+    <button class="option-button" onmousedown="showOption('credits');">Credits</button>
+  </section>
+  <section class="active-screen hidden">
+    <h1 id="status-banner"></h1>
+    <p id="complementary-text-banner"></p>
+    <img id="rest-image" src="images/pause_image.jpeg">
+    <h1 id="timer"></h1>
+    <p id="song-name-banner"></p>
+    <button id="toggle-button" onclick="playToggle();">Pause</button>
+    <button id="flow-button" onclick="start();" hidden></button>
+    <video id="video-background" onended="playNextVideo();">
+      <source id="video-source" src="videos/dirtmouth.mp4" type="video/mp4">
+    </video>
+  </section>
 </body>
 </html>
