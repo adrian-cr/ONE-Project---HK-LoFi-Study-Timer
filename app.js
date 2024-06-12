@@ -61,7 +61,7 @@ let screenStatus;
 let vidSource = document.getElementById("video-source");
 let nextTrack = 1;
 let playingTrack = 0;
-let time = 1500;
+let time = 1500; // 10;
 let intervalId;
 
 function changeScreenStatus (sStatus="empty") {
@@ -128,7 +128,7 @@ function start() {
   }, 100);
   setTimeout(() => {
     hideAllScreens();
-    time = 1500;
+    time = 1500; //10;
     formatTimer();
     timer.hidden = false;
   }, 1200);
@@ -141,7 +141,7 @@ function start() {
     statusBanner.innerText = "Time to focus!";
     textBanner.innerText = "The only way to victory is forwards.";
     restImage.style.display = "none";
-    songNameBanner.innerText = `Song: ${Object.keys(vidFileNames)[playingTrack]}`;
+    songNameBanner.innerText = `Song: ${vidInfo[Object.keys(vidInfo)[playingTrack]]["name"]}`;
     flowButton.hidden = true;
   }, 1500);
   setTimeout(()=>{
@@ -228,7 +228,7 @@ function startStopTimer() {
   }
   intervalId = setInterval(() => {
     if (time > 1) {
-      time--
+      time--;
       formatTimer();
     }
     else {
@@ -242,13 +242,12 @@ function nextStage() {
   if (stage==="focus"){
     stage = "rest";
     if (shortBreaks<3){
-      time = 300;
+      time = 300; // 5;
       shortBreaks++;
-
     }
     else {
       shortBreaks = 0;
-      time = 1800;
+      time = 1800; // 15;
     }
     rest();
   }

@@ -22,29 +22,44 @@
     <div id="start-overlay"><p>Click Anywhere</p></div>
     <div class="option-overlay" id="hiw-overlay">
       <p>
-        <span class="option-title">How It Works</span>
-      Lorem ipsum dolor sit amet,
-      consectetur adipisicing elit.
-      Consequatur, repudiandae possimus.
-      Tenetur, quibusdam? Ipsam pariatur ut nemo reprehenderit?
-      Sed eligendi, debitis repudiandae voluptas
-      et quidem velit magnam quod impedit officiis.
+      <span class="option-title">How It Works</span>
+      This timer works in cycles (masks) of 4 intervals (shards).<br>
+      Each shard takes 25 minutes of focused work to obtain.
+      <span class="hiw-image-container">
+      <img id="hiw-image-1" class="hiw-image mask-shard-image" src="images/mask-shard.jpg"/>
+      </span>
+      Once a shard is obtained, you get a 5-minute break.
+      <span class="hiw-image-container">
+        <img id="hiw-image-2" class="hiw-image" src="images/pause_image.jpeg"/>
+      </span>
+      Once 4 shards are obtained, a mask is completed, and you get a 30-minute break.
+      <span class="hiw-image-container">
+      <img class="hiw-image mask-shard-image" src="images/mask-shard.jpg"/>
+      <img class="hiw-image mask-shard-image" src="images/mask-shard.jpg"/>
+      <img class="hiw-image mask-shard-image" src="images/mask-shard.jpg"/>
+      <img class="hiw-image mask-shard-image" src="images/mask-shard.jpg"/>
+      <span style="font-size: 3em;">&nbsp;=&nbsp;&nbsp;</span>
+      <img class="hiw-image mask-full-image" src="images/mask-full.jpg"/>
+      </span>
+      Complete as many masks as you need!
       </p>
-      <br>
-      <button class="option-back" onclick="backToMain();">Back</button>
+      <button class="option-back" onclick="backToMain();">Go Back</button>
     </div>
     <div class="option-overlay" id="credits-overlay">
       <p>
         <span class="option-title">Credits</span>
-      Lorem ipsum dolor sit amet,
-      consectetur adipisicing elit.
-      Consequatur, repudiandae possimus.
-      Tenetur, quibusdam? Ipsam pariatur ut nemo reprehenderit?
-      Sed eligendi, debitis repudiandae voluptas
-      et quidem velit magnam quod impedit officiis.
+      Project Development
+      <span class="credits-name">Adrián Camacho</span><br>
+      Hollow Knight - Original Soundtrack
+      <span class="credits-name">Christopher Larkin, Team Cherry</span><br>
+      Hollow Knight - Soundtrack Covers
+      <span class="credits-name">Collosia</span><br>
+      Hollow Knight - Imagery
+      <span class="credits-name">Team Cherry</span><br>
+      Motion Videos
+      <span class="credits-name">Vecteezy, Vichai Viriyathanaporn (Main Theme), Alexandr Gorlov (Dirtmouth), Anoer One (Greenpath), Cassova (City of Tears)</span>
       </p>
-      <br>
-      <button id="option-back" onclick="backToMain();">Back</button>
+      <button class="option-back" onclick="backToMain();">Go Back</button>
     </div>
     <h1>The Unofficial Lo-Fi Focus Timer</h1>
     <button id="start-button" onmousedown="start();">Start</button>

@@ -88,21 +88,55 @@ section.hidden, section.hidden * {
 
 .option-overlay {
   display: none;
+  align-items: center;
 }
 
 .option-overlay p {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  font-size: 1.2em;
+  justify-content: center;
+  margin: 0;
+  width: 70%;
 }
 
 .option-title {
   font-size: 3em;
+  margin-bottom: 3%;
   width:100%;
 }
 
 .option-back {
-  margin-top: 50px;
+  margin-top: 20px;
+}
+
+.hiw-image-container {
+  display: flex;
+  justify-content: center;
+  margin: 1%;
+  width: 100%;
+}
+
+.hiw-image {
+  width:4%;
+}
+
+#hiw-image-1 {
+  width:7%;
+}
+
+#hiw-image-2 {
+  width:15%;
+}
+
+.credits-name {
+  width: 100%;
+  font-size: 1.5em;
+  text-shadow: 0 0 10px rgb(147, 255, 248);
+}
+
+.option-back {
+  text-shadow: 0 0 5px white;
 }
 
 video {
