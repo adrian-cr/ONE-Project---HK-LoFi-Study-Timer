@@ -63,6 +63,7 @@ let nextTrack = 1;
 let playingTrack = 0;
 let time = 1500; // 10;
 let intervalId;
+let overlay = document.getElementById("start-overlay");
 
 function changeScreenStatus (sStatus="empty") {
   //Possible values: "main," "active," "rest," and "empty"
@@ -250,13 +251,19 @@ function nextStage() {
       time = 1800; // 15;
     }
     rest();
+    return
   }
   else {
     time = 0;
     startStopTimer();
     timeUp();
+    return
   }
 
+}
+
+function dummyTimeShow() {
+  timer.innerText = time;
 }
 
 function formatTimer() {
@@ -264,8 +271,6 @@ function formatTimer() {
   let formattedTime = timeToFormat.toLocaleTimeString("en-US", {minute:"2-digit", second:"2-digit"});
   timer.innerText = formattedTime;
 }
-
-let overlay = document.getElementById("start-overlay");
 
 overlay.addEventListener("click", ()=>{
   clickText.innerText = null;
