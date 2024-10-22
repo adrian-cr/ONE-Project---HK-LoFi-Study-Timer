@@ -79,7 +79,7 @@ section.hidden, section.hidden * {
   width: 100%;
 }
 
-#start-button {
+.start-button {
   display: block;
 }
 
@@ -130,6 +130,15 @@ section.hidden, section.hidden * {
   width:15%;
 }
 
+#hiw-overlay #hiw-image-2 {
+  width: 300px;
+}
+
+.mask-shard-image, .mask-full-image {
+  height: 80px;
+  width: 60px !important;
+}
+
 .credits-name {
   width: 100%;
   font-size: 1.5em;
@@ -157,7 +166,7 @@ video {
 }
 
 #rest-image {
-  width:20%;
+  width:300px;
 }
 
 [status = "empty"] section, [status = "empty"] section * {
@@ -229,5 +238,173 @@ video {
   }
   to {
     text-shadow: 0 0 30px #9eeaff;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  /* MAIN SCREEN */
+  .main-screen .logo {
+    width: 500px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .start-button, .option-button {
+    font-size: 2em;
+  }
+
+  /* HIW & CREDITS SCREEN */
+  .option-title {
+    font-size: 3em;
+  }
+
+  .mask-shard-image, .mask-full-image {
+    height: 70px;
+    width: 50px !important;
+  }
+
+  #hiw-image-2 {
+    height: 150px;
+    width: 250px !important;
+  }
+
+
+  /* TIMER SCREEN */
+  #status-banner {
+    font-size: 3em;
+  }
+
+  #rest-image {
+    width: 300px;
+  }
+
+  #complementary-text-banner {
+    width: 80%;
+  }
+
+  #flow-button {
+    font-size: 2em;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  /* MAIN SCREEN */
+  .main-screen .logo {
+    width: 400px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .start-button, .option-button {
+    font-size: 1.5em;
+  }
+
+  /* HIW & CREDITS SCREEN */
+  .option-title {
+    font-size: 2.3em;
+  }
+
+  .option-overlay p {
+    font-size: 1.2em;
+  }
+
+  .mask-shard-image, .mask-full-image {
+    height: 70px;
+    width: 50px !important;
+  }
+
+  #hiw-image-2 {
+    height: 150px;
+    width: 200px !important;
+  }
+
+  .credits-name {
+    font-size: 1.3em;
+  }
+
+  .option-back {
+    font-size: 1.9em;
+  }
+
+  /* TIMER SCREEN */
+  #status-banner {
+    font-size: 2.5em;
+  }
+
+  #complementary-text-banner {
+    font-size: 1.3em;
+  }
+
+
+  #flow-button {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* MAIN SCREEN */
+  .main-screen .logo {
+    width: 350px;
+  }
+
+  h1 {
+    font-size: 1.7em;
+  }
+
+  .start-button, .option-button {
+    font-size: 1.2em;
+  }
+
+  /* HIW & CREDITS SCREEN */
+  .option-title, .option-back {
+    font-size: 2em;
+  }
+
+  .option-overlay p {
+    font-size: 0.9em;
+  }
+
+  .credits-name {
+    font-size: 1.3em;
+  }
+
+  .mask-shard-image, .mask-full-image {
+    height: 60px;
+    width: 40px !important;
+  }
+
+  #hiw-image-2 {
+    height: 100px;
+    width: 150px !important;
+  }
+
+  .option-back {
+    font-size: 1.6em;
+  }
+
+  /* TIMER SCREEN */
+  #status-banner {
+    font-size: 2em;
+  }
+
+  #complementary-text-banner {
+    font-size: 1em;
+  }
+
+  #timer {
+    font-size: 5em;
+  }
+
+  #toggle-button {
+    font-size: 2.3em;
+  }
+
+  #song-name-banner {
+    font-size: 1em;
   }
 }
